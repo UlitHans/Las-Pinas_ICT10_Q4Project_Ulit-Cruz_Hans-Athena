@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Attendance Tracker</title>
+
+<link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+<script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+<py-config>
+packages = ["numpy", "matplotlib"]
+</py-config>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f5fb;
+    color: #2d3748;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+
+.nav-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #334155;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.container {
+    max-width: 900px;
+    margin: 120px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 18px 40px rgba(15,23,42,0.08);
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="nav-title">Grade 10 Ruby</div>
+
+<ul class="nav-links">
+<li><a href="classmatelist.html">Classmates</a></li>
+<li><a href="attendance.html">Attendance</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+</ul>
+</nav>
+
+<div class="container">
+
+<div class="card">
+<h2>Attendance Tracker</h2>
+
+<select id="day">
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+</select>
+
+<input type="number" id="num" placeholder="Enter absences">
+
+<button py-click="plot">Add Attendance</button>
+</div>
+
+<div class="card">
+<h3>Graph Output</h3>
+<div id="plot"></div>
+</div>
+
+</div>
+
+<py-script src="main2.py"></py-script>
+
+</body>
+</html>

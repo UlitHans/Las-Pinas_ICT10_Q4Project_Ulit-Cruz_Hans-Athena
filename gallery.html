@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Class Gallery</title>
+
+<link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+<script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+<py-config>
+packages = []
+</py-config>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f5fb;
+    color: #2d3748;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.nav-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #334155;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 120px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 18px 40px rgba(15,23,42,0.08);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.photo {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+}
+
+.photo img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.photo h4 {
+    margin: 10px 0 5px;
+    color: #1e3a8a;
+}
+
+.photo p {
+    font-size: 13px;
+    color: #475569;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="nav-title">Grade 10 Ruby</div>
+
+<ul class="nav-links">
+<li><a href="classmatelist.html">Classmates</a></li>
+<li><a href="attendance.html">Attendance</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+</ul>
+</nav>
+
+<div class="container">
+
+<div class="card">
+<h2>Class Activity Gallery</h2>
+<p>Photos of ICT activities with captions</p>
+</div>
+
+<div class="card">
+<div id="gallery" class="gallery"></div>
+</div>
+
+</div>
+
+<py-script src="main3.py"></py-script>
+
+</body>
+</html>
